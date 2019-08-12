@@ -1,0 +1,22 @@
+name: iconv-simosx
+version: '1.16'
+summary: iconv from GNU libiconv (not the simplified default GLIBC iconv)
+description: |
+  Utility to convert text between different character encodings. 
+  Most Linux distributions use the GNU glibc iconv, which is simplified
+  and does not have the full feature set of iconv from libiconv.
+  Features include the Java encoding (JAVA) and --unicode-subst=
+
+grade: stable
+confinement: strict
+
+apps:
+  iconv-simosx:
+    command: iconv
+
+parts:
+  iconv-simosx:
+    source: https://ftp.gnu.org/pub/gnu/libiconv/libiconv-1.16.tar.gz
+    plugin: autotools
+    build-packages: 
+      - build-essential
